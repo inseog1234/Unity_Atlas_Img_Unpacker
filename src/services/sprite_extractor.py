@@ -23,5 +23,6 @@ class HollowKnightSpriteExtractor(SpriteExtractor):
 
         if record.sfilpped:
             sprite = sprite.transpose(Image.Transpose.ROTATE_90)
+            sprite = ImageOps.mirror(sprite)
 
         return sprite
