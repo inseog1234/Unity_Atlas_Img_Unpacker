@@ -44,8 +44,14 @@ class StableCanvasLayoutStrategy(LayoutStrategy):
     ) -> PILImage:
         group_key = self._group_key(record)
         canvas_width, canvas_height = group_sizes[group_key]
+
         canvas = Image.new("RGBA", (canvas_width, canvas_height), (0, 0, 0, 0))
-        canvas.alpha_composite(sprite, (record.sxr, record.syr))
+
+        offset_x = record.sxr
+
+        offset_y = canvas_height - sprite.height - record.syr
+
+        canvas.alpha_composite(sprite, (offset_x, offset_y))
         return canvas
 
     @staticmethod
