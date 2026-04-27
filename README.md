@@ -1,4 +1,4 @@
-# Hollow Knight Atlas Parser GUI v2
+# Atlas Img Parser GUI v2
 
 Tkinter 기반 GUI 프로그램입니다.
 
